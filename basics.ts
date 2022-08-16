@@ -44,3 +44,17 @@ let admin: Person[];
 
 
 //Function types, parameters
+function substract(a: number, b: number) {
+    return a- b;
+}
+
+//Generics
+function insertAtBeginning<T>(array: T[], value: T) {
+    const newArray = [value, ...array];
+    return newArray;
+}
+
+const testArray = [1, 2, 3];
+const updatedArray = insertAtBeginning(testArray, 5); //Expected : [5, 1, 2, 3]
+
+const nextArray = insertAtBeginning(['1', '2', '3'], '10'); //Expected: ['10','1', '2','3']
